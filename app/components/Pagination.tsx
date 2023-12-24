@@ -1,3 +1,4 @@
+"use client";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -31,16 +32,36 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
       <Text size={"2"}>
         {currentPage} of {pageCount}
       </Text>
-      <Button color="gray" variant="soft" disabled={currentPage == 1}>
+      <Button
+        color="gray"
+        variant="soft"
+        disabled={currentPage == 1}
+        onClick={() => changePage(1)}
+      >
         <DoubleArrowLeftIcon />
       </Button>
-      <Button color="gray" variant="soft" disabled={currentPage == 1}>
+      <Button
+        color="gray"
+        variant="soft"
+        disabled={currentPage == 1}
+        onClick={() => changePage(currentPage - 1)}
+      >
         <ChevronLeftIcon />
       </Button>
-      <Button color="gray" variant="soft" disabled={currentPage == pageCount}>
+      <Button
+        color="gray"
+        variant="soft"
+        disabled={currentPage == pageCount}
+        onClick={() => changePage(currentPage + 1)}
+      >
         <ChevronRightIcon />
       </Button>
-      <Button color="gray" variant="soft" disabled={currentPage == pageCount}>
+      <Button
+        color="gray"
+        variant="soft"
+        disabled={currentPage == pageCount}
+        onClick={() => changePage(pageCount)}
+      >
         <DoubleArrowRightIcon />
       </Button>
     </Flex>
